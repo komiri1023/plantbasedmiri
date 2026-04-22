@@ -3,133 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantbased Miri | Vegane Ernährungsberatung</title>
+    <title>Plantbased Miri | Vegane Ernährungsberatung Zürich</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1A202C; scroll-behavior: smooth; }
-        
-        /* Hero szekció a screenshotod alapján */
+
         .hero-bg {
-            background-image: url('rolam (föoldalra).jpg'); /* Ez lesz a nagy háttérkép */
+            background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('Hintergrund.jpg');
             background-size: cover;
             background-position: center;
-            min-height: 80vh;
+            background-attachment: fixed;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding: 0 5%;
+            padding: 0 7%;
         }
+
         .hero-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px);
-            padding: 50px;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 60px;
             border-radius: 40px;
-            max-width: 600px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 580px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
-        .btn-brown { background-color: #8B5E4F; color: white; border-radius: 9999px; padding: 12px 30px; font-weight: 600; transition: 0.3s; }
+
+        .btn-brown { background-color: #8B5E4F; color: white; border-radius: 9999px; padding: 14px 40px; font-weight: 600; transition: 0.3s; display: inline-block; }
+        .btn-brown:hover { opacity: 0.9; transform: translateY(-2px); }
         .wix-green { background-color: #F1F8F4; }
         .wix-accent { background-color: #D1E7DD; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-white/90 border-b py-4">
+    <nav class="fixed w-full z-50 bg-white/90 border-b py-4 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10">
-            <div class="hidden md:flex space-x-8 text-[11px] uppercase font-semibold tracking-widest">
+            <div class="hidden md:flex space-x-8 text-[11px] uppercase font-bold tracking-widest text-gray-500">
                 <a href="#home">Home</a>
                 <a href="#fokus">Fokus</a>
                 <a href="#success">Erfolge</a>
                 <a href="#about">Über mich</a>
-                <a href="#contact">Kontakt</a>
             </div>
-            <a href="#contact" class="btn-brown text-sm">Beratung buchen</a>
+            <a href="#contact" class="btn-brown text-xs uppercase">Beratung buchen</a>
         </div>
     </nav>
 
-    <section id="home" class="pt-24 pb-12">
+    <section id="home" class="pt-20">
         <div class="hero-bg">
             <div class="hero-card">
-                <h1 class="text-5xl font-bold leading-tight mb-6 text-gray-800">
-                    Vegane <br>Ernährungsberatung in <br>Zürich & der Schweiz
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Individuelle Beratung für eine gesunde pflanzliche Ernährung – wissenschaftlich fundiert & alltagstauglich.
-                </p>
-                <a href="#contact" class="btn-brown inline-block">Beratung buchen</a>
+                <h1 class="text-5xl font-bold leading-tight mb-6">Vegane Ernährungsberatung in Zürich</h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed italic">"Wissenschaftlich fundierte Pflanzenkost für deine Lebensqualität."</p>
+                <a href="#contact" class="btn-brown">Termin buchen</a>
             </div>
         </div>
     </section>
 
-    <section id="fokus" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Wie ich dich unterstütze</h2>
-            <div class="grid md:grid-cols-5 gap-8 text-center">
-                <div class="p-6">
-                    <i class="fa-solid fa-droplet text-3xl mb-4 text-[#8B5E4F]"></i>
-                    <h3 class="font-bold uppercase text-sm">Blutzucker</h3>
-                </div>
-                <div class="p-6">
-                    <i class="fa-solid fa-weight-scale text-3xl mb-4 text-[#8B5E4F]"></i>
-                    <h3 class="font-bold uppercase text-sm">Gewicht</h3>
-                </div>
-                <div class="p-6">
-                    <i class="fa-solid fa-person-running text-3xl mb-4 text-[#8B5E4F]"></i>
-                    <h3 class="font-bold uppercase text-sm">Sport</h3>
-                </div>
-                <div class="p-6">
-                    <i class="fa-solid fa-heart-pulse text-3xl mb-4 text-[#8B5E4F]"></i>
-                    <h3 class="font-bold uppercase text-sm">Herzgesundheit</h3>
-                </div>
-                <div class="p-6">
-                    <i class="fa-solid fa-bolt text-3xl mb-4 text-[#8B5E4F]"></i>
-                    <h3 class="font-bold uppercase text-sm">Vitalität</h3>
-                </div>
-            </div>
+    <section id="fokus" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-12 text-center">
+            <div><i class="fa-solid fa-droplet text-3xl mb-4 text-[#8B5E4F]"></i><p class="font-bold uppercase text-xs tracking-widest">Blutzucker</p></div>
+            <div><i class="fa-solid fa-weight-scale text-3xl mb-4 text-[#8B5E4F]"></i><p class="font-bold uppercase text-xs tracking-widest">Gewicht</p></div>
+            <div><i class="fa-solid fa-person-running text-3xl mb-4 text-[#8B5E4F]"></i><p class="font-bold uppercase text-xs tracking-widest">Sport</p></div>
+            <div><i class="fa-solid fa-heart-pulse text-3xl mb-4 text-[#8B5E4F]"></i><p class="font-bold uppercase text-xs tracking-widest">Herz</p></div>
+            <div><i class="fa-solid fa-bolt text-3xl mb-4 text-[#8B5E4F]"></i><p class="font-bold uppercase text-xs tracking-widest">Vitalität</p></div>
         </div>
     </section>
 
-    <section id="success" class="py-20 wix-green">
+    <section id="success" class="py-24 wix-green">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 italic">Erfolgsgeschichten</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-[40px] shadow-sm text-center">
-                    <img src="Marianna_M.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-wix-accent">
+            <h2 class="text-3xl font-bold text-center mb-16 italic text-gray-800">Erfolgsgeschichten</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-10 rounded-[40px] text-center shadow-sm">
+                    <img src="Marianna_M.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white">
                     <h4 class="font-bold mb-2">Marianna M.</h4>
                     <p class="text-sm italic text-gray-600">"20 kg verloren, Blutdruck stabil! Ein neues Lebensgefühl."</p>
                 </div>
-                <div class="bg-white p-8 rounded-[40px] shadow-sm text-center">
-                    <img src="Andrea_U.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-wix-accent">
+                <div class="bg-white p-10 rounded-[40px] text-center shadow-sm">
+                    <img src="Andrea_U.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white">
                     <h4 class="font-bold mb-2">Andrea U.</h4>
-                    <p class="text-sm italic text-gray-600">"Typ-1-Diabetes Werte stabiler denn je. Endlich Sicherheit beim Essen."</p>
+                    <p class="text-sm italic text-gray-600">"Typ-1-Diabetes Werte stabiler denn je. Endlich Sicherheit."</p>
                 </div>
-                <div class="bg-white p-8 rounded-[40px] shadow-sm text-center">
-                    <img src="Erika_M.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-wix-accent">
+                <div class="bg-white p-10 rounded-[40px] text-center shadow-sm">
+                    <img src="Erika_M.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white">
                     <h4 class="font-bold mb-2">Erika M.</h4>
-                    <p class="text-sm italic text-gray-600">"HbA1c von 7,7 auf 5,9 gesunken. Danke für die tolle Begleitung!"</p>
+                    <p class="text-sm italic text-gray-600">"HbA1c von 7,7 auf 5,9 gesunken. Danke für die Begleitung!"</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="about" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
             <div class="md:w-1/2">
-                <img src="Rolam (aloldalra).jpg" class="rounded-[40px] shadow-2xl w-full">
+                <img src="Rolam (aloldalra).jpg" class="rounded-[40px] shadow-2xl w-full h-[550px] object-cover">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-4xl font-bold mb-6 italic">Über mich</h2>
-                <p class="text-gray-700 leading-relaxed space-y-4">
-                    Ich bin Mirjana Kovacs... Meine Reise begann mit einer Typ-1-Diabetes Diagnose. 
-                    Ernährung ist für mich Lebensqualität. Als zertifizierte Expertin (eCornell) 
-                    begleite ich dich mit Fachwissen und eigener Erfahrung zu deinen Zielen.
-                </p>
-                <div class="mt-8 p-6 bg-gray-50 rounded-2xl flex items-center gap-4">
-                    <img src="Certificate.png" class="w-20 shadow-lg">
-                    <p class="text-xs font-bold uppercase tracking-widest">eCornell Certified Nutritionist</p>
+                <h2 class="text-4xl font-bold mb-8 italic">Über mich</h2>
+                <div class="text-gray-700 leading-relaxed space-y-6">
+                    <p class="text-xl font-medium text-green-900">Ich bin Mirjana Kovacs, zertifizierte Expertin für pflanzliche Ernährung (eCornell).</p>
+                    <p>Meine Reise begann mit einer Typ-1-Diabetes Diagnose. Diese Erfahrung lehrte mich, dass Ernährung weit mehr ist als nur Kalorien – sie ist die Grundlage für unsere Lebensqualität.</p>
+                    <p>Heute begleite ich Menschen in Zürich dabei, ihre Vitalität durch wissenschaftlich fundierte Pflanzenkost zu maximieren.</p>
+                </div>
+                <div class="mt-10 p-8 bg-wix-green rounded-3xl flex items-center gap-6">
+                    <img src="Certificate.png" class="w-24 shadow-lg border-4 border-white">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-green-800">Cornell University Certified Nutritionist</p>
                 </div>
             </div>
         </div>
@@ -137,18 +115,24 @@
 
     <section id="contact" class="py-24 wix-accent">
         <div class="max-w-xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-8">Lass uns starten</h2>
+            <h2 class="text-4xl font-bold mb-10 italic">Lass uns starten</h2>
             <form class="space-y-4">
-                <input type="text" placeholder="Name" class="w-full p-4 rounded-full border-none shadow-sm">
-                <input type="email" placeholder="E-Mail" class="w-full p-4 rounded-full border-none shadow-sm">
-                <textarea placeholder="Deine Nachricht" class="w-full p-4 rounded-[30px] border-none shadow-sm" rows="4"></textarea>
-                <button class="btn-brown w-full py-4 text-lg">Senden</button>
+                <input type="text" placeholder="Vorname" class="w-full p-5 rounded-full border-none shadow-sm outline-none">
+                <input type="email" placeholder="E-Mail" class="w-full p-5 rounded-full border-none shadow-sm outline-none">
+                <textarea placeholder="Deine Nachricht" class="w-full p-6 rounded-[30px] border-none shadow-sm outline-none" rows="4"></textarea>
+                <button type="button" class="btn-brown w-full py-5 text-lg">Senden</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-8 text-center text-xs opacity-50 uppercase tracking-widest">
-        © 2026 Plantbased Miri | Zürich
+    <footer class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.3em] text-gray-400">
+            <p>© 2026 Plantbased Miri | Zürich | Schweiz</p>
+            <div class="flex space-x-8 mt-6 md:mt-0 font-bold">
+                <a href="#" class="hover:text-black transition">Impressum</a>
+                <a href="#" class="hover:text-black transition">Datenschutz</a>
+            </div>
+        </div>
     </footer>
 
 </body>
