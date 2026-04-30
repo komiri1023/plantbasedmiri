@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich | Plantbased Miri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        :root {
+            --brand-brown: #8B5E4F;
+            --brand-light: #F9F8F6;
+            --brand-dark: #2D3748;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: var(--brand-dark);
+            background-color: var(--brand-light);
+        }
+
+        h1, h2, h3, .serif-font { 
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-primary {
+            background-color: var(--brand-brown);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 40px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigáció -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
+        <a href="index.html">
+            <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-12">
+        </a>
+        <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
+            <a href="index.html#home" class="hover:text-[#8B5E4F] transition-colors">Home</a>
+            <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F] transition-colors">Fokus</a>
+            <a href="index.html#angebote" class="hover:text-[#8B5E4F] transition-colors">Angebote</a>
+            <a href="ueber-mich.html" class="text-[#8B5E4F]">Über mich</a>
+            <a href="erfolge.html" class="hover:text-[#8B5E4F] transition-colors">Erfolge</a>
+        </div>
+        <a href="index.html#contact" class="btn-primary text-sm py-2 px-6">Kontakt</a>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6 max-w-6xl mx-auto">
+        
+        <!-- Fő rész: Kép és Bevezető -->
+        <div class="flex flex-col md:flex-row gap-16 items-center mb-20">
+            <div class="md:w-1/2">
+                <img src="en.jpg" alt="Mirjana Kovacs" class="rounded-[60px] shadow-2xl w-full h-[600px] object-cover object-top">
+            </div>
+            <div class="md:w-1/2">
+                <h1 class="text-5xl mb-8 italic leading-tight">Die Geschichte hinter Plant-Based Miri</h1>
+                <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                    <p class="font-semibold text-gray-800 text-xl italic">„Meine Reise zur pflanzlichen Ernährung begann nicht mit einem Trend, sondern mit einer lebensverändernden Diagnose: Typ-1-Diabetes.“</p>
+                    <p>Die Erfahrung, wie ich durch eine fundierte, pflanzliche Lebensweise meinen eigenen Insulinbedarf drastisch stabilisieren und meine Vitalität zurückgewinnen konnte, prägt heute meine tägliche Arbeit.</p>
+                    <p>Ich biete Ihnen nicht nur Theorie, sondern praxiserprobtes Wissen aus erster Hand.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Szakértelem rész -->
+        <div class="content-section mb-16 bg-[#D1E7DD]/20 border-none">
+            <h2 class="text-3xl mb-8 italic text-center">Wissenschaftliches Fundament & Expertise</h2>
+            <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg space-y-6">
+                <p>Um diese persönliche Erfahrung auf eine wissenschaftliche Basis zu stellen, habe ich mich an der renommierten <strong>eCornell University (T. Colin Campbell Center for Nutrition Studies)</strong> auf pflanzliche Ernährung spezialisiert.</p>
+                <p>In den letzten Jahren durfte ich bereits hunderten von Menschen dabei helfen, ihre Vitalität durch eine Ernährungsumstellung neu zu definieren. Meine Klienten konnten durch meine Begleitung beeindruckende Erfolge erzielen – von der <strong>nachhaltigen Gewichtsoptimierung</strong> über die <strong>Stabilisierung des Blutzuckerspiegels</strong> bis hin zur signifikanten <strong>Verbesserung ihrer Cholesterin- und Entzündungswerte</strong>.</p>
+                <p>Heute begleite ich Menschen in Zürich und der gesamten Schweiz mit einem Ansatz, der wissenschaftlich fundiert, evidenzbasiert und dennoch individuell auf den Alltag zugeschnitten ist.</p>
+                
+                <!-- Certifikát -->
+                <div class="pt-8 text-center">
+                    <img src="Certificate.png" alt="Plant-based Nutrition Certificate" class="h-40 mx-auto opacity-90 hover:opacity-100 transition-opacity shadow-sm rounded-lg">
+                </div>
+            </div>
+        </div>
+
+        <!-- Célcsoport rész -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl italic">Für wen ich hier bin</h2>
+                <p class="text-gray-600 text-lg">Mein Angebot richtet sich an Menschen, die keine Kompromisse bei ihrer Gesundheit machen wollen:</p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-check text-[#8B5E4F] mt-1"></i>
+                        <span><strong>Athleten:</strong> Die ihre Regeneration und Performance aufs nächste Level heben möchten.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-check text-[#8B5E4F] mt-1"></i>
+                        <span><strong>Bewusste Menschen:</strong> Die ihren Stoffwechsel (wie Blutzucker- oder Cholesterinspiegel) präventiv optimieren wollen.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-check text-[#8B5E4F] mt-1"></i>
+                        <span><strong>Einsteiger & Fortgeschrittene:</strong> Die Sicherheit und Struktur in der veganen Welt suchen.</span>
+                    </li>
+                </ul>
+                <p class="pt-4 text-gray-600 italic">„Ich kombiniere klinische Evidenz mit alltagstauglichen Lösungen, die Freude am Genuss bereiten.“</p>
+            </div>
+            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-50">
+                <h3 class="text-2xl mb-6 serif-font">Bereit für Ihre eigene Reise?</h3>
+                <p class="text-gray-600 mb-8">Lassen Sie uns gemeinsam schauen, wie wir Ihre Ziele erreichen können.</p>
+                <a href="index.html#contact" class="btn-primary w-full text-center">Jetzt Kontakt aufnehmen</a>
+            </div>
+        </div>
+
+        <!-- Vissza gomb -->
+        <div class="mt-20 text-center">
+            <a href="index.html" class="text-gray-400 hover:text-[#8B5E4F] transition-colors font-semibold">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Zurück zur Startseite
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-12 px-6 text-center">
+        <img src="3394_PlantbasedMiri_logo_VC_GR.png" class="h-10 mx-auto opacity-50 mb-6">
+        <p class="text-[10px] text-gray-300 uppercase tracking-[0.4em]">© 2026 Plantbased Miri</p>
+    </footer>
+
+</body>
+</html>
