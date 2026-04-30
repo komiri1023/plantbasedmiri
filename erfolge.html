@@ -13,7 +13,6 @@
             --brand-brown: #8B5E4F;
             --brand-light: #F9F8F6;
             --brand-dark: #2D3748;
-            --brand-green: #D1E7DD;
         }
 
         body { 
@@ -31,7 +30,8 @@
             border-radius: 24px;
             overflow: hidden;
             transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0,05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            height: 100%;
         }
 
         .success-card:hover {
@@ -51,20 +51,22 @@
 </head>
 <body>
 
+    <!-- Navigáció -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
         <a href="index.html">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-12">
         </a>
         <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
-            <a href="index.html#home" class="hover:text-[#8B5E4F]">Home</a>
-            <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F]">Fokus</a>
-            <a href="index.html#angebote" class="hover:text-[#8B5E4F]">Angebote</a>
-            <a href="index.html#über-mich" class="hover:text-[#8B5E4F]">Über mich</a>
-            <a href="index.html#success" class="text-[#8B5E4F]">Erfolge</a>
+            <a href="index.html#home" class="hover:text-[#8B5E4F] transition-colors">Home</a>
+            <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F] transition-colors">Fokus</a>
+            <a href="index.html#angebote" class="hover:text-[#8B5E4F] transition-colors">Angebote</a>
+            <a href="ueber-mich.html" class="hover:text-[#8B5E4F] transition-colors">Über mich</a>
+            <a href="erfolge.html" class="text-[#8B5E4F]">Erfolge</a>
         </div>
         <a href="index.html#contact" class="btn-primary text-sm py-2 px-6">Kontakt</a>
     </nav>
 
+    <!-- Header -->
     <header class="pt-40 pb-16 px-6 bg-[#D1E7DD]/20 text-center">
         <h1 class="text-5xl md:text-6xl italic mb-6">Erfolgsgeschichten</h1>
         <p class="max-w-2xl mx-auto text-lg text-gray-600">
@@ -72,87 +74,97 @@
         </p>
     </header>
 
+    <!-- Sikersztorik Galéria -->
     <main class="py-20 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
+            <!-- 1. Marianna M. -->
             <article class="success-card">
-                <img src="Marianna_M.jpg" class="w-full h-[400px] object-cover object-top" alt="Marianna M.">
+                <img src="Marianna_M.jpg" class="w-full h-[450px] object-cover object-top" alt="Marianna M.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Marianna M.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Vom Notfall zur neuen Vitalität (-20 kg)</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Alles begann mit einem absoluten Tiefpunkt: Ich wurde mit dem Notarzt und einem lebensgefährlichen Blutdruck von 240 ins Krankenhaus eingeliefert. Mit einem Startgewicht von 105 kg wusste ich, dass ich radikal etwas ändern muss... Heute wiege ich 85 kg, meine Blutwerte sind hervorragend und mein Blutdruck stabil.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Alles begann mit einem absoluten Tiefpunkt: Ich wurde mit dem Notarzt und einem lebensgefährlichen Blutdruck von 240 ins Krankenhaus eingeliefert... Heute wiege ich 85 kg, meine Blutwerte sind hervorragend und mein Blutdruck stabil.“</p>
                 </div>
             </article>
 
+            <!-- 2. Timea H. -->
             <article class="success-card">
-                <img src="Timea H.jpg" class="w-full h-[400px] object-cover object-top" alt="Timea H.">
+                <img src="Timea_H.jpg" class="w-full h-[450px] object-cover object-top" alt="Timea H.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Timea H.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Insulinresistenz & Abnehmen (-28 kg)</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren. Meine Symptome der Insulinresistenz sind komplett verschwunden. Ich fühle mich heute wie ein völlig neuer Mensch.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren. Meine Symptome der Insulinresistenz sind komplett verschwunden.“</p>
                 </div>
             </article>
 
+            <!-- 3. Elisabeth K. -->
             <article class="success-card">
-                <img src="Julia_H.jpg" class="w-full h-[400px] object-cover object-top" alt="Julia H.">
+                <img src="Elisabeth_K.jpg" class="w-full h-[450px] object-cover object-top" alt="Elisabeth K.">
                 <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-2">Julia H.</h3>
-                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Atopische Dermatitis</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Nach Jahren mit atopischer Dermatitis und erfolglosen Steroid-Behandlungen hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen és Pigmentflecken sind fast vollständig verschwunden.“</p>
+                    <h3 class="text-2xl font-bold mb-2">Elisabeth K.</h3>
+                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">-13 kg & Strahlende Laborwerte</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Innerhalb weniger Monate habe ich 13 kg verloren. Mein TSH-Wert hat sich stabilisiert, Sodbrennen und Schuppenflechte sind verschwunden.“</p>
                 </div>
             </article>
 
+            <!-- 4. Márta F. -->
             <article class="success-card">
-                <img src="Marta_F.jpg" class="w-full h-[400px] object-cover object-top" alt="Márta F.">
+                <img src="Marta_F.jpg" class="w-full h-[450px] object-cover object-top" alt="Márta F.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Márta F.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Cholesterin & Schilddrüse</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Cholesterinspiegel sank von 6,8 auf 4,32 mmol/l. Mein TSH-Wert hat sich von 6,2 auf 0,6 verbessert. Ich habe 6 kg verloren und fühle mich fantastisch!“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Cholesterinspiegel sank von 6,8 auf 4,32 mmol/l. Mein TSH-Wert hat sich von 6,2 auf 0,6 verbessert. Ich fühle mich fantastisch!“</p>
                 </div>
             </article>
 
+            <!-- 5. Erika M. -->
             <article class="success-card">
-                <img src="Erika_M.jpg" class="w-full h-[400px] object-cover object-top" alt="Erika M.">
+                <img src="Erika_M.jpg" class="w-full h-[450px] object-cover object-top" alt="Erika M.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Erika M.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Diabetes & Gewichtsverlust (-15 kg)</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Innerhalb von nur zwei Monaten sank mein HbA1c-Wert von 7,7 auf 5,9. Ich konnte meine Medikamente halbieren und habe gleichzeitig 15 kg abgenommen.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Innerhalb von nur zwei Monaten sank mein HbA1c-Wert von 7,7 auf 5,9. Ich habe gleichzeitig 15 kg abgenommen.“</p>
                 </div>
             </article>
 
+            <!-- 6. Dr. Sipos -->
             <article class="success-card">
-                <img src="Dr._Sipos.png" class="w-full h-[400px] object-cover object-top" alt="Dr. Sipos">
+                <img src="Dr_Sipos.jpg" class="w-full h-[450px] object-cover object-top" alt="Dr. Sipos">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Dr. Sipos</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Typ-2-Diabetes</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Als Ärztin lag mein Nüchternzucker zwischen 15,5 – 19,4. Mit Miris Unterstützung liegt mein Wert nun konstant unter 5,5 mmol/l. Ich reduziere bereits meine Medikamente.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Als Ärztin lag mein Nüchternzucker zwischen 15,5 – 19,4. Mit Miris Unterstützung liegt mein Wert nun konstant unter 5,5 mmol/l.“</p>
                 </div>
             </article>
 
+            <!-- 11. Georg B. (BAL OLDALON MARAD) -->
             <article class="success-card">
-                <img src="Georg_B.jpg" class="w-full h-[400px] object-cover object-top" alt="Georg B.">
+                <img src="Georg_B.jpg" class="w-full h-[450px] object-cover object-top" alt="Georg B.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Georg B.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">LDL-Optimierung</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Gesamtcholesterin ist von 8 mmol/l auf 4,8 mmol/l gesunken. Auch mein LDL-Wert hat sich fast halbiert. Die pflanzliche Ernährung funktioniert wirklich!“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Gesamtcholesterin ist von 8 mmol/l auf 4,8 mmol/l gesunken. Auch mein LDL-Wert hat sich fast halbiert. Es funktioniert!“</p>
                 </div>
             </article>
 
+            <!-- 3. Julia H. (KÉT HELYET FOGLAL EL JOBB OLDALON) -->
             <article class="success-card lg:col-span-2">
-                <div class="md:flex">
-                    <img src="Elisabeth_K.jpg" class="md:w-1/2 h-[400px] object-cover object-top" alt="Elisabeth K.">
-                    <div class="p-8 md:w-1/2">
-                        <h3 class="text-2xl font-bold mb-2">Elisabeth K.</h3>
-                        <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">-13 kg & Strahlende Laborwerte</p>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-4">„Innerhalb weniger Monate habe ich 13 kg verloren. Mein TSH-Wert hat sich stabilisiert, Sodbrennen und Schuppenflechte sind verschwunden. Ich habe deutlich töb Energy und das ganz ohne Medikamente!“</p>
+                <div class="flex flex-col h-full">
+                    <img src="Julia_H.jpg" class="w-full h-[450px] object-cover object-center" alt="Julia H.">
+                    <div class="p-8 flex-grow">
+                        <h3 class="text-2xl font-bold mb-2">Julia H.</h3>
+                        <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Atopische Dermatitis</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">„Nach Jahren mit atopischer Dermatitis és erfolglosen Steroid-Behandlungen hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen und Pigmentflecken in meinem Gesicht sind fast vollständig verschwunden. Ich bin unendlich dankbar, dass meine Haut heute wieder gesund aussieht.“</p>
                     </div>
                 </div>
             </article>
 
         </div>
 
+        <!-- Vissza gomb -->
         <div class="mt-20 text-center">
-            <a href="index.html" class="text-gray-500 hover:text-[#8B5E4F] font-bold">
+            <a href="index.html" class="text-gray-500 hover:text-[#8B5E4F] font-bold transition-colors">
                 <i class="fa-solid fa-arrow-left mr-2"></i> Zurück zur Startseite
             </a>
         </div>
