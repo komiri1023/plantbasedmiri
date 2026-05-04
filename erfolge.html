@@ -220,39 +220,7 @@
         </div>
     </footer>
 
-    <!-- KIBŐVÍTETT COOKIE BANNER -->
-    <div id="cookie-banner">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-center md:text-left">
-                    <h4 class="font-bold text-sm mb-1">Wir schätzen Ihre Privatsphäre</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">
-                        Wir verwenden Cookies, um die Website-Nutzung zu analysieren und Ihr Erlebnis zu verbessern. 
-                        Weitere Informationen finden Sie in unserer <a href="datenschutz.html" class="underline hover:text-[#8B5E4F]">Datenschutzerklärung</a>.
-                    </p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <button onclick="acceptCookies()" class="btn-primary text-[10px] py-2.5 px-6">Alle akzeptieren</button>
-                    <button onclick="acceptCookies()" class="btn-secondary">Nur essenzielle</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-
-        window.onload = function() {
-            setTimeout(function() {
-                if (!localStorage.getItem('cookiesAccepted')) {
-                    document.getElementById('cookie-banner').style.display = 'block';
-                }
-            }, 1000);
-        }
-    </script>
+  
 <!-- KIBŐVÍTETT COOKIE BANNER KEZDETE -->
 <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
     <div class="max-w-7xl mx-auto">
