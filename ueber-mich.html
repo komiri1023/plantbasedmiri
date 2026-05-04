@@ -133,38 +133,70 @@
         <img src="3394_PlantbasedMiri_logo_VC_GR.png" class="h-10 mx-auto opacity-50 mb-6">
         <p class="text-[10px] text-gray-300 uppercase tracking-[0.4em]">© 2026 Plantbased Miri</p>
     </footer>
-  <!-- KIBŐVÍTETT COOKIE BANNER -->
-    <div id="cookie-banner">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-center md:text-left">
-                    <h4 class="font-bold text-sm mb-1">Wir schätzen Ihre Privatsphäre</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">
-                        Wir verwenden Cookies, um die Website-Nutzung zu analysieren und Ihr Erlebnis zu verbessern. 
-                        Weitere Informationen finden Sie in unserer <a href="datenschutz.html" class="underline hover:text-[#8B5E4F]">Datenschutzerklärung</a>.
-                    </p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <button onclick="acceptCookies()" class="btn-primary text-[10px] py-2.5 px-6">Alle akzeptieren</button>
-                    <button onclick="acceptCookies()" class="btn-secondary">Nur essenzielle</button>
-                </div>
+ <!-- KIBŐVÍTETT COOKIE BANNER KEZDETE -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-gray-600">
+                <h4 class="font-bold text-gray-800 mb-1 text-base">Cookie-Einstellungen</h4>
+                <p>Wir verwenden Cookies, um die grundlegenden Funktionen der Website zu gewährleisten und unseren Datenverkehr zu analysieren. 
+                    <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e] transition-colors">Mehr Informationen finden Sie in unserer Datenschutzerklärung</a>.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <!-- Csak a szükséges sütik -->
+                <button onclick="acceptEssential()" class="border border-gray-300 text-gray-600 py-2.5 px-6 rounded-full font-semibold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap">
+                    Nur Essenzielle
+                </button>
+                <!-- Minden elfogadása -->
+                <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2.5 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap shadow-md">
+                    Alle akzeptieren
+                </button>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
+<script>
+    const banner = document.getElementById('cookie-banner');
 
-        window.onload = function() {
-            setTimeout(function() {
-                if (!localStorage.getItem('cookiesAccepted')) {
-                    document.getElementById('cookie-banner').style.display = 'block';
-                }
+    function hideBanner() {
+        banner.classList.add('hidden');
+    }
+
+    // Csak a weboldal működéséhez elengedhetetlen sütik
+    function acceptEssential() {
+        localStorage.setItem('cookieConsent', 'essential');
+        hideBanner();
+        console.log('User opted for essential cookies only.');
+    }
+
+    // Minden süti (statisztika, marketing, stb.)
+    function acceptAll() {
+        localStorage.setItem('cookieConsent', 'all');
+        hideBanner();
+        // Ide illesztheted később a Google Analytics vagy FB Pixel kódokat
+        console.log('User accepted all cookies.');
+    }
+
+    window.addEventListener('load', function() {
+        // Ellenőrizzük, van-e már döntés elmentve
+        if (!localStorage.getItem('cookieConsent')) {
+            setTimeout(() => {
+                banner.classList.remove('hidden');
+                // Animáció (opcionális Tailwind-el)
+                banner.classList.add('animate-bounce-short'); 
             }, 1000);
         }
-    </script>
+    });
+</script>
+
+<style>
+    /* Egy kis finomítás az olvashatósághoz */
+    #cookie-banner {
+        box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+</style>
+<!-- KIBŐVÍTETT COOKIE BANNER VÉGE -->
 </body>
 </html>
