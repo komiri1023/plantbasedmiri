@@ -82,7 +82,7 @@
             <a href="ueber-mich.html" class="hover:text-[#8B5E4F] transition-colors">Über Mich</a>
             <a href="erfolge.html" class="hover:text-[#8B5E4F]">Erfolge</a>
         </div>
-        <a href="#contact" class="btn-primary text-sm py-2 px-6">Beratung buchen</a>
+        <a href="#contact" class="btn-primary text-sm py-2 px-6">Kontakt</a>
     </nav>
 
     <section id="home" class="hero-section pt-20">
@@ -90,7 +90,7 @@
             <div class="max-w-2xl bg-white/90 p-12 rounded-[40px] shadow-xl">
                 <h1 class="text-5xl md:text-6xl mb-6 leading-tight text-gray-800">Vegane Ernährungsberatung in Zürich & der Schweiz</h1>
                 <p class="text-xl text-gray-600 mb-8 leading-relaxed">Individuelle Beratung für eine gesunde pflanzliche Ernährung – wissenschaftlich fundiert & alltagstauglich</p>
-                <a href="#contact" class="btn-primary">Kostenloses Erstgespräch buchen</a>
+                <a href="#contact" class="btn-primary">Termin vereinbaren</a>
             </div>
         </div>
     </section>
@@ -203,6 +203,38 @@
         </div>
     </footer>
 
-    <!-- Cookie Banner & Scripts (identisch wie vorher) -->
+      <!-- KIBŐVÍTETT COOKIE BANNER -->
+    <div id="cookie-banner">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-sm mb-1">Wir schätzen Ihre Privatsphäre</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Wir verwenden Cookies, um die Website-Nutzung zu analysieren und Ihr Erlebnis zu verbessern. 
+                        Weitere Informationen finden Sie in unserer <a href="datenschutz.html" class="underline hover:text-[#8B5E4F]">Datenschutzerklärung</a>.
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button onclick="acceptCookies()" class="btn-primary text-[10px] py-2.5 px-6">Alle akzeptieren</button>
+                    <button onclick="acceptCookies()" class="btn-secondary">Nur essenzielle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.onload = function() {
+            setTimeout(function() {
+                if (!localStorage.getItem('cookiesAccepted')) {
+                    document.getElementById('cookie-banner').style.display = 'block';
+                }
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
