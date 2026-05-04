@@ -316,37 +316,47 @@
         </div>
     </div>
 </footer>
-<!-- COOKIE BANNER KEZDETE -->
+<!-- Bővített Cookie Banner -->
 <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="text-sm text-gray-600">
-            <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die weitere Nutzung der Website stimmen Sie der Verwendung von Cookies zu. Weitere Infos finden Sie im 
-                <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e]">Datenschutz</a>.
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-sm text-gray-600 text-left">
+            <h4 class="font-bold text-gray-800 mb-1">Cookie-Einstellungen</h4>
+            <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und die Nutzung unserer Website zu analysieren. Sie können wählen, melyik kategóriát engedélyezi. Details finden Sie in unserer 
+                <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e]">Datenschutzerklärung</a>.
             </p>
         </div>
-        <div class="flex gap-4">
-            <button onclick="acceptCookies()" class="bg-[#8B5E4F] text-white py-2 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap">Akzeptieren</button>
+        <div class="flex flex-wrap gap-3">
+            <button onclick="acceptEssential()" class="text-gray-500 text-sm px-4 hover:underline whitespace-nowrap">Nur Essenzielle</button>
+            <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap">Alle akzeptieren</button>
         </div>
     </div>
 </div>
 
 <script>
-    function acceptCookies() {
-        // Elmentjük a böngészőbe, hogy elfogadta
-        localStorage.setItem('cookieAccepted', 'true');
-        // Elrejtjük a sávot
+    function hideBanner() {
         document.getElementById('cookie-banner').classList.add('hidden');
     }
 
+    function acceptEssential() {
+        localStorage.setItem('cookieConsent', 'essential');
+        hideBanner();
+        console.log('Csak a technikailag szükséges sütik engedélyezve.');
+    }
+
+    function acceptAll() {
+        localStorage.setItem('cookieConsent', 'all');
+        hideBanner();
+        // Itt töltheted be később a Google Analytics kódot
+        console.log('Minden süti engedélyezve (Analytics is).');
+    }
+
     window.addEventListener('load', function() {
-        // Csak akkor mutatjuk, ha még nem fogadta el korábban
-        if (!localStorage.getItem('cookieAccepted')) {
+        if (!localStorage.getItem('cookieConsent')) {
             setTimeout(() => {
                 document.getElementById('cookie-banner').classList.remove('hidden');
-            }, 1000); // 1 másodperc késleltetés az elegáns megjelenésért
+            }, 1000);
         }
     });
 </script>
-<!-- COOKIE BANNER VÉGE -->
 </body>
 </html>
