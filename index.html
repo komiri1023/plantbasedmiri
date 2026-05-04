@@ -82,7 +82,7 @@
             <a href="#über-mich">Über mich</a>
             <a href="#success">Erfolge</a>
         </div>
-        <a href="#contact" class="btn-primary text-sm py-2 px-6">Beratung buchen</a>
+        <a href="#contact" class="btn-primary text-sm py-2 px-6">Kontakt</a>
     </nav>
 
     <section id="home" class="hero-section pt-20">
@@ -90,7 +90,7 @@
             <div class="max-w-2xl bg-white/90 p-12 rounded-[40px] shadow-xl">
                 <h1 class="text-5xl md:text-6xl mb-6 leading-tight text-gray-800">Vegane Ernährungsberatung in Zürich & der Schweiz</h1>
                 <p class="text-xl text-gray-600 mb-8 leading-relaxed">Individuelle Beratung für eine gesunde pflanzliche Ernährung – wissenschaftlich fundiert & alltagstauglich</p>
-                <a href="#contact" class="btn-primary">Kostenloses Erstgespräch buchen</a>
+                <a href="#contact" class="btn-primary">Termin vereinbaren</a>
             </div>
         </div>
     </section>
@@ -317,6 +317,38 @@
         </div>
     </div>
 </footer>
+<!-- COOKIE BANNER KEZDETE -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-gray-600">
+            <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die weitere Nutzung der Website stimmen Sie der Verwendung von Cookies zu. Weitere Infos finden Sie im 
+                <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e]">Datenschutz</a>.
+            </p>
+        </div>
+        <div class="flex gap-4">
+            <button onclick="acceptCookies()" class="bg-[#8B5E4F] text-white py-2 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap">Akzeptieren</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function acceptCookies() {
+        // Elmentjük a böngészőbe, hogy elfogadta
+        localStorage.setItem('cookieAccepted', 'true');
+        // Elrejtjük a sávot
+        document.getElementById('cookie-banner').classList.add('hidden');
+    }
+
+    window.addEventListener('load', function() {
+        // Csak akkor mutatjuk, ha még nem fogadta el korábban
+        if (!localStorage.getItem('cookieAccepted')) {
+            setTimeout(() => {
+                document.getElementById('cookie-banner').classList.remove('hidden');
+            }, 1000); // 1 másodperc késleltetés az elegáns megjelenésért
+        }
+    });
+</script>
+<!-- COOKIE BANNER VÉGE -->
 
 </body>
 </html>
