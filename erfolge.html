@@ -32,6 +32,8 @@
             transition: transform 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .success-card:hover {
@@ -49,22 +51,6 @@
             cursor: pointer;
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--brand-dark);
-            padding: 10px 24px;
-            border: 1px solid #ddd;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #f5f5f5;
-        }
-
         .footer-link {
             transition: color 0.3s;
         }
@@ -72,19 +58,8 @@
             color: var(--brand-brown);
         }
 
-        /* Cookie Banner Style */
         #cookie-banner {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: white;
-            padding: 24px;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-            z-index: 1000;
-            border: 1px solid #f0f0f0;
+            box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -117,78 +92,100 @@
     <main class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-100">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             
+            <!-- Marianna M. -->
             <article class="success-card">
-                <img src="Marianna_M.jpg" class="w-full h-[450px] object-cover object-top" alt="Marianna M.">
+                <img src="Marianna_M.jpg" class="w-full h-[350px] object-cover object-top" alt="Marianna M.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Marianna M.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Vom Notfall zur neuen Vitalität</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „Alles begann mit einem absoluten Tiefpunkt... Heute sind meine Blutwerte hervorragend, mein Blutdruck ist stabil und ich habe 20 kg verloren.“
+                        „Ein Blutdruck von 240 und die Einlieferung ins Krankenhaus waren mein Weckruf. Mit Miris Hilfe habe ich innerhalb weniger Monate 20 kg verloren (von 105 kg auf 85 kg). Heute ist mein Blutdruck stabil, meine Blutwerte sind hervorragend und ich strahle wieder vor Energie. Die pflanzliche Ernährung hat mein Leben nachhaltig verändert.“
                     </p>
                 </div>
             </article>
 
+            <!-- Timea H. -->
             <article class="success-card">
-                <img src="Timea H.jpg" class="w-full h-[450px] object-cover object-top" alt="Timea H.">
+                <img src="Timea H.jpg" class="w-full h-[350px] object-cover object-top" alt="Timea H.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Timea H.</h3>
-                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Insulinresistenz & Abnehmen (-28 kg)</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren.“</p>
+                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Insulinresistenz & Abnehmen</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        „In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren. Meine Symptome der Insulinresistenz sind komplett verschwunden. Die Kilos purzeln weiterhin, und ich fühle mich heute wie ein völlig neuer Mensch. Danke, Miri!“
+                    </p>
                 </div>
             </article>
 
+            <!-- Elisabeth K. -->
             <article class="success-card">
-                <img src="Elisabeth_K.jpg" class="w-full h-[450px] object-cover object-top" alt="Elisabeth K.">
+                <img src="Elisabeth_K.jpg" class="w-full h-[350px] object-cover object-top" alt="Elisabeth K.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Elisabeth K.</h3>
-                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">-13 kg & Strahlende Laborwerte</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Innerhalb weniger Monate habe ich 13 kg verloren. Sodbrennen und Schuppenflechte sind verschwunden.“</p>
+                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">-13 kg und strahlende Laborwerte</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        „Seit ich meine Ernährung mit Miris Hilfe umgestellt habe, hat sich meine Gesundheit grundlegend verändert. Innerhalb weniger Monate habe ich 13 kg verloren, aber der eigentliche Erfolg zeigt sich in meinem neuen Lebensgefühl und den medizinischen Werten. Mein Cholesterinspiegel sank von 8,2 auf 6,9 und auch die Triglyzerid- sowie Entzündungswerte (CRP) liegen nun endlich im Normalbereich. Besonders beeindruckend: Mein TSH-Wert hat sich auf 2,4 stabilisiert, nachdem ich jahrelang wegen einer Überfunktion behandelt wurde. HbA1C 5.6.“
+                    </p>
                 </div>
             </article>
 
+            <!-- Márta F. -->
             <article class="success-card">
-                <img src="Marta_F.jpg" class="w-full h-[450px] object-cover object-top" alt="Márta F.">
+                <img src="Marta_F.jpg" class="w-full h-[350px] object-cover object-top" alt="Márta F.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Márta F.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Cholesterin & Schilddrüse</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Cholesterinspiegel sank von 6,8 auf 4,32 mmol/l. Ich fühle mich fantastisch!“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        „Meine Laborergebnisse sprechen für sich: Mein Cholesterinspiegel sank von 6,8 mmol/l auf 4,32 mmol/l. Besonders freue ich mich über meinen TSH-Wert, der sich von 6,2 auf 0,6 verbessert hat. Ich habe 6 kg verloren und fühle mich fantastisch! Vielen herzlichen Dank, Miri!“
+                    </p>
                 </div>
             </article>
 
+            <!-- Erika M. -->
             <article class="success-card">
-                <img src="Erika_M.jpg" class="w-full h-[450px] object-cover object-top" alt="Erika M.">
+                <img src="Erika_M.jpg" class="w-full h-[350px] object-cover object-top" alt="Erika M.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Erika M.</h3>
-                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Diabetes & Gewichtsverlust (-15 kg)</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Mein HbA1c-Wert sank von 7,7 auf 5,9. Ich habe gleichzeitig 15 kg abgenommen.“</p>
+                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Diabetes & Gewichtsverlust</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        „Innerhalb von nur zwei Monaten sank mein HbA1c-Wert von 7,7 auf 5,9. Ich konnte meine Medikamente bereits halbieren und habe gleichzeitig 15 kg abgenommen. Diese Ernährung ist für mich einfach lebensverändernd!“
+                    </p>
                 </div>
             </article>
 
+            <!-- Dr. Sipos -->
             <article class="success-card">
-                <img src="Dr._Sipos.png" class="w-full h-[450px] object-cover object-top" alt="Dr. Sipos">
+                <img src="Dr._Sipos.png" class="w-full h-[350px] object-cover object-top" alt="Dr. Sipos">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Dr. Sipos</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Typ-2-Diabetes</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Als Ärztin lag mein Nüchternzucker bei 19,4. Nun liegt er konstant unter 5,5 mmol/l.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        „Als Ärztin habe ich lange nur auf Medikamente vertraut. Mein Nüchternzucker lag zwischen 15,5 – 19,4 mmol/l. Mit Miris professioneller Unterstützung halte ich nun die vollwertige pflanzliche Ernährung, und mein Wert liegt konstant unter 5,5 mmol/l. Ich beginne nun sogar, meine Medikamentendosis schrittweise zu reduzieren.“
+                    </p>
                 </div>
             </article>
 
+            <!-- Georg B. -->
             <article class="success-card">
-                <img src="Georg_B.jpg" class="w-full h-[450px] object-cover object-top" alt="Georg B.">
+                <img src="Georg_B.jpg" class="w-full h-[350px] object-cover object-top" alt="Georg B.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Georg B.</h3>
-                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">LDL-Optimierung</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Gesamtcholesterin ist von 8 mmol/l auf 4,8 mmol/l gesunken. Es funktioniert!“</p>
+                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Cholesterin & LDL-Optimierung</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        „Nur zwei Monate nach meinem letzten Labortest ist mein Gesamtcholesterin von 8 mmol/l auf 4,8 mmol/l gesunken (der Grenzwert liegt bei 5,2 mmol/l). Auch mein LDL-Wert hat sich von 6,3 auf 3,28 fast halbiert. Damit habe ich eines meiner wichtigsten Ziele bereits erreicht. Es sieht ganz so aus, dass die vollwertige pflanzliche Ernährung wirklich funktioniert! :)“
+                    </p>
                 </div>
             </article>
 
+            <!-- Julia H. -->
             <article class="success-card lg:col-span-2">
-                <div class="flex flex-col h-full">
-                    <img src="Julia_H.jpg" class="w-full h-[450px] object-cover object-center" alt="Julia H.">
+                <div class="flex flex-col md:flex-row h-full">
+                    <img src="Julia_H.jpg" class="w-full md:w-1/2 h-[400px] object-cover object-center" alt="Julia H.">
                     <div class="p-8 flex-grow">
                         <h3 class="text-2xl font-bold mb-2">Julia H.</h3>
                         <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Atopische Dermatitis</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">„Nach Jahren mit erfolglosen Steroid-Behandlungen hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen sind fast vollständig verschwunden.“</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            „Nach Jahren mit atopischer Dermatitis und erfolglosen Steroid-Behandlungen hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen und Pigmentflecken in meinem Gesicht sind fast vollständig verschwunden. Ich bin unendlich dankbar, dass meine Haut heute wieder gesund aussieht.“
+                        </p>
                     </div>
                 </div>
             </article>
@@ -201,7 +198,7 @@
         </div>
     </main>
 
-    <!-- LÁBLÉC (Csak Logo, Insta, Linkek) -->
+    <!-- LÁBLÉC -->
     <footer class="bg-white py-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" class="h-10 opacity-50" alt="Logo">
@@ -220,71 +217,52 @@
         </div>
     </footer>
 
-  
-<!-- KIBŐVÍTETT COOKIE BANNER KEZDETE -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="text-sm text-gray-600">
-                <h4 class="font-bold text-gray-800 mb-1 text-base">Cookie-Einstellungen</h4>
-                <p>Wir verwenden Cookies, um die grundlegenden Funktionen der Website zu gewährleisten und unseren Datenverkehr zu analysieren. 
-                    <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e] transition-colors">Mehr Informationen finden Sie in unserer Datenschutzerklärung</a>.
-                </p>
-            </div>
-            <div class="flex flex-wrap gap-3">
-                <!-- Csak a szükséges sütik -->
-                <button onclick="acceptEssential()" class="border border-gray-300 text-gray-600 py-2.5 px-6 rounded-full font-semibold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap">
-                    Nur Essenzielle
-                </button>
-                <!-- Minden elfogadása -->
-                <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2.5 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap shadow-md">
-                    Alle akzeptieren
-                </button>
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-sm text-gray-600">
+                    <h4 class="font-bold text-gray-800 mb-1 text-base">Cookie-Einstellungen</h4>
+                    <p>Wir verwenden Cookies, um die grundlegenden Funktionen der Website zu gewährleisten und unseren Datenverkehr zu analysieren. 
+                        <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e] transition-colors">Mehr Informationen finden Sie in unserer Datenschutzerklärung</a>.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="acceptEssential()" class="border border-gray-300 text-gray-600 py-2.5 px-6 rounded-full font-semibold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        Nur Essenzielle
+                    </button>
+                    <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2.5 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap shadow-md">
+                        Alle akzeptieren
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    const banner = document.getElementById('cookie-banner');
+    <script>
+        const banner = document.getElementById('cookie-banner');
 
-    function hideBanner() {
-        banner.classList.add('hidden');
-    }
-
-    // Csak a weboldal működéséhez elengedhetetlen sütik
-    function acceptEssential() {
-        localStorage.setItem('cookieConsent', 'essential');
-        hideBanner();
-        console.log('User opted for essential cookies only.');
-    }
-
-    // Minden süti (statisztika, marketing, stb.)
-    function acceptAll() {
-        localStorage.setItem('cookieConsent', 'all');
-        hideBanner();
-        // Ide illesztheted később a Google Analytics vagy FB Pixel kódokat
-        console.log('User accepted all cookies.');
-    }
-
-    window.addEventListener('load', function() {
-        // Ellenőrizzük, van-e már döntés elmentve
-        if (!localStorage.getItem('cookieConsent')) {
-            setTimeout(() => {
-                banner.classList.remove('hidden');
-                // Animáció (opcionális Tailwind-el)
-                banner.classList.add('animate-bounce-short'); 
-            }, 1000);
+        function hideBanner() {
+            banner.classList.add('hidden');
         }
-    });
-</script>
 
-<style>
-    /* Egy kis finomítás az olvashatósághoz */
-    #cookie-banner {
-        box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-</style>
-<!-- KIBŐVÍTETT COOKIE BANNER VÉGE -->
+        function acceptEssential() {
+            localStorage.setItem('cookieConsent', 'essential');
+            hideBanner();
+        }
+
+        function acceptAll() {
+            localStorage.setItem('cookieConsent', 'all');
+            hideBanner();
+        }
+
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    banner.classList.remove('hidden');
+                }, 1000);
+            }
+        });
+    </script>
 </body>
 </html>
