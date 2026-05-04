@@ -46,6 +46,45 @@
             font-weight: 600;
             display: inline-block;
             transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--brand-dark);
+            padding: 10px 24px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f5f5f5;
+        }
+
+        .footer-link {
+            transition: color 0.3s;
+        }
+        .footer-link:hover {
+            color: var(--brand-brown);
+        }
+
+        /* Cookie Banner Style */
+        #cookie-banner {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: white;
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            z-index: 1000;
+            border: 1px solid #f0f0f0;
         }
     </style>
 </head>
@@ -75,107 +114,145 @@
     </header>
 
     <!-- Sikersztorik Galéria -->
-    <main class="py-20 px-6 max-w-7xl mx-auto">
+    <main class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-100">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <article class="success-card">
+                <img src="Marianna_M.jpg" class="w-full h-[450px] object-cover object-top" alt="Marianna M.">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-2">Marianna M.</h3>
+                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Vom Notfall zur neuen Vitalität</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        „Alles begann mit einem absoluten Tiefpunkt... Heute sind meine Blutwerte hervorragend, mein Blutdruck ist stabil und ich habe 20 kg verloren.“
+                    </p>
+                </div>
+            </article>
 
-    <!-- 1. Marianna M. -->
-<article class="success-card">
-    <img src="Marianna_M.jpg" class="w-full h-[450px] object-cover object-top" alt="Marianna M.">
-    <div class="p-8">
-        <h3 class="text-2xl font-bold mb-2">Marianna M.</h3>
-        <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Vom Notfall zur neuen Vitalität</p>
-        <p class="text-gray-600 text-sm leading-relaxed">
-            „Alles begann mit einem absoluten Tiefpunkt: Ich wurde mit dem Notarzt und einem lebensgefährlichen Blutdruck von 240 ins Krankenhaus eingeliefert... Heute sind meine Blutwerte hervorragend, mein Blutdruck ist stabil und ich habe 20 kg verloren.“
-        </p>
-    </div>
-</article>
-
-            <!-- 2. Timea H. -->
             <article class="success-card">
                 <img src="Timea H.jpg" class="w-full h-[450px] object-cover object-top" alt="Timea H.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Timea H.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Insulinresistenz & Abnehmen (-28 kg)</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren. Meine Symptome der Insulinresistenz sind komplett verschwunden.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren.“</p>
                 </div>
             </article>
 
-            <!-- 3. Elisabeth K. -->
             <article class="success-card">
                 <img src="Elisabeth_K.jpg" class="w-full h-[450px] object-cover object-top" alt="Elisabeth K.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Elisabeth K.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">-13 kg & Strahlende Laborwerte</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Innerhalb weniger Monate habe ich 13 kg verloren. Mein TSH-Wert hat sich stabilisiert, Sodbrennen und Schuppenflechte sind verschwunden.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Innerhalb weniger Monate habe ich 13 kg verloren. Sodbrennen und Schuppenflechte sind verschwunden.“</p>
                 </div>
             </article>
 
-            <!-- 4. Márta F. -->
             <article class="success-card">
                 <img src="Marta_F.jpg" class="w-full h-[450px] object-cover object-top" alt="Márta F.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Márta F.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Cholesterin & Schilddrüse</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Cholesterinspiegel sank von 6,8 auf 4,32 mmol/l. Mein TSH-Wert hat sich von 6,2 auf 0,6 verbessert. Ich fühle mich fantastisch!“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Cholesterinspiegel sank von 6,8 auf 4,32 mmol/l. Ich fühle mich fantastisch!“</p>
                 </div>
             </article>
 
-            <!-- 5. Erika M. -->
             <article class="success-card">
                 <img src="Erika_M.jpg" class="w-full h-[450px] object-cover object-top" alt="Erika M.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Erika M.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Diabetes & Gewichtsverlust (-15 kg)</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Innerhalb von nur zwei Monaten sank mein HbA1c-Wert von 7,7 auf 5,9. Ich habe gleichzeitig 15 kg abgenommen.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Mein HbA1c-Wert sank von 7,7 auf 5,9. Ich habe gleichzeitig 15 kg abgenommen.“</p>
                 </div>
             </article>
 
-            <!-- 6. Dr. Sipos -->
             <article class="success-card">
                 <img src="Dr._Sipos.png" class="w-full h-[450px] object-cover object-top" alt="Dr. Sipos">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Dr. Sipos</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Typ-2-Diabetes</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Als Ärztin lag mein Nüchternzucker zwischen 15,5 – 19,4. Mit Miris Unterstützung liegt mein Wert nun konstant unter 5,5 mmol/l.“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Als Ärztin lag mein Nüchternzucker bei 19,4. Nun liegt er konstant unter 5,5 mmol/l.“</p>
                 </div>
             </article>
 
-            <!-- 11. Georg B. (BAL OLDALON MARAD) -->
             <article class="success-card">
                 <img src="Georg_B.jpg" class="w-full h-[450px] object-cover object-top" alt="Georg B.">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-2">Georg B.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">LDL-Optimierung</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Gesamtcholesterin ist von 8 mmol/l auf 4,8 mmol/l gesunken. Auch mein LDL-Wert hat sich fast halbiert. Es funktioniert!“</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">„Mein Gesamtcholesterin ist von 8 mmol/l auf 4,8 mmol/l gesunken. Es funktioniert!“</p>
                 </div>
             </article>
 
-            <!-- 3. Julia H. (KÉT HELYET FOGLAL EL JOBB OLDALON) -->
             <article class="success-card lg:col-span-2">
                 <div class="flex flex-col h-full">
                     <img src="Julia_H.jpg" class="w-full h-[450px] object-cover object-center" alt="Julia H.">
                     <div class="p-8 flex-grow">
                         <h3 class="text-2xl font-bold mb-2">Julia H.</h3>
                         <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Atopische Dermatitis</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">„Nach Jahren mit atopischer Dermatitis és erfolglosen Steroid-Behandlungen hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen und Pigmentflecken in meinem Gesicht sind fast vollständig verschwunden. Ich bin unendlich dankbar, dass meine Haut heute wieder gesund aussieht.“</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">„Nach Jahren mit erfolglosen Steroid-Behandlungen hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen sind fast vollständig verschwunden.“</p>
                     </div>
                 </div>
             </article>
-
         </div>
 
-        <!-- Vissza gomb -->
         <div class="mt-20 text-center">
-            <a href="index.html" class="text-gray-500 hover:text-[#8B5E4F] font-bold transition-colors">
+            <a href="index.html" class="text-gray-400 hover:text-[#8B5E4F] text-sm uppercase tracking-widest font-bold transition-colors">
                 <i class="fa-solid fa-arrow-left mr-2"></i> Zurück zur Startseite
             </a>
         </div>
     </main>
 
-    <footer class="bg-white border-t border-gray-100 py-12 px-6 text-center">
-        <img src="3394_PlantbasedMiri_logo_VC_GR.png" class="h-10 mx-auto opacity-50 mb-6">
-        <p class="text-[10px] text-gray-300 uppercase tracking-[0.4em]">© 2026 Plantbased Miri</p>
+    <!-- LÁBLÉC (Csak Logo, Insta, Linkek) -->
+    <footer class="bg-white py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <img src="3394_PlantbasedMiri_logo_VC_GR.png" class="h-10 opacity-50" alt="Logo">
+            
+            <div class="flex items-center gap-8">
+                <a href="https://www.instagram.com/plantbasedmiri/" target="_blank" class="text-gray-400 hover:text-[#8B5E4F] text-2xl transition-colors">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <div class="flex gap-12 text-[11px] uppercase tracking-widest font-bold">
+                    <a href="impressum.html" class="footer-link">Impressum</a>
+                    <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+                </div>
+            </div>
+            
+            <p class="text-[10px] text-gray-300 uppercase tracking-[0.4em]">© 2026 Plantbased Miri</p>
+        </div>
     </footer>
+
+    <!-- KIBŐVÍTETT COOKIE BANNER -->
+    <div id="cookie-banner">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-sm mb-1">Wir schätzen Ihre Privatsphäre</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Wir verwenden Cookies, um die Website-Nutzung zu analysieren und Ihr Erlebnis zu verbessern. 
+                        Weitere Informationen finden Sie in unserer <a href="datenschutz.html" class="underline hover:text-[#8B5E4F]">Datenschutzerklärung</a>.
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button onclick="acceptCookies()" class="btn-primary text-[10px] py-2.5 px-6">Alle akzeptieren</button>
+                    <button onclick="acceptCookies()" class="btn-secondary">Nur essenzielle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.onload = function() {
+            setTimeout(function() {
+                if (!localStorage.getItem('cookiesAccepted')) {
+                    document.getElementById('cookie-banner').style.display = 'block';
+                }
+            }, 1000);
+        }
+    </script>
 
 </body>
 </html>
