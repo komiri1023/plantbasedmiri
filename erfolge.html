@@ -66,19 +66,42 @@
 <body>
 
     <!-- Navigáció -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
-        <a href="index.html">
-            <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-12">
-        </a>
-        <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
-            <a href="index.html#home" class="hover:text-[#8B5E4F] transition-colors">Home</a>
-            <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F] transition-colors">Fokus</a>
-            <a href="index.html#angebote" class="hover:text-[#8B5E4F] transition-colors">Angebote</a>
-            <a href="ueber-mich.html" class="hover:text-[#8B5E4F] transition-colors">Über mich</a>
-            <a href="erfolge.html" class="text-[#8B5E4F]">Erfolge</a>
+   <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
+    <a href="index.html">
+        <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
+    </a>
+
+    <!-- Desktop menü -->
+    <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#schwerpunkte">Fokus</a>
+        <a href="index.html#angebote">Angebote</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="erfolge.html">Erfolge</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <!-- Kontakt gomb: Csak asztalin látszik -->
+        <a href="index.html#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
+        
+        <!-- Hamburger gomb -->
+        <button id="menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobil menü -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b shadow-lg md:hidden">
+        <div class="flex flex-col p-6 space-y-4 font-semibold text-sm uppercase tracking-wider">
+            <a href="index.html#home" class="mobile-link">Home</a>
+            <a href="index.html#schwerpunkte" class="mobile-link">Fokus</a>
+            <a href="index.html#angebote" class="mobile-link">Angebote</a>
+            <a href="ueber-mich.html" class="mobile-link">Über mich</a>
+            <a href="erfolge.html" class="mobile-link">Erfolge</a>
+            <a href="index.html#contact" class="mobile-link btn-primary text-white text-center">Kontakt</a>
         </div>
-        <a href="index.html#contact" class="btn-primary text-sm py-2 px-6">Kontakt</a>
-    </nav>
+    </div>
+</nav>
 
     <!-- Header -->
     <header class="pt-40 pb-16 px-6 bg-[#D1E7DD]/20 text-center">
@@ -264,5 +287,20 @@
             }
         });
     </script>
+    <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
 </body>
 </html>
