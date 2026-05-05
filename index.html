@@ -86,7 +86,7 @@
 </head>
 <body>
 
-    <!-- Navigáció reszponzív menüvel -->
+   <!-- Navigáció reszponzív menüvel -->
     <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
         <a href="#home">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
@@ -102,7 +102,8 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <a href="#contact" class="hidden sm:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
+            <!-- Kontakt gomb: Mobilon rejtve (hidden), asztali nézetben megjelenik (md:inline-block) -->
+            <a href="#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
             
             <!-- Hamburger gomb (csak mobilon látszik) -->
             <button id="menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
@@ -118,7 +119,7 @@
                 <a href="#angebote" class="mobile-link">Angebote</a>
                 <a href="ueber-mich.html" class="mobile-link">Über mich</a>
                 <a href="erfolge.html" class="mobile-link">Erfolge</a>
-                <a href="#contact" class="mobile-link btn-primary text-white">Kontakt</a>
+                <a href="#contact" class="mobile-link btn-primary text-white text-center">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -156,8 +157,6 @@
             });
         });
     </script>
-</body>
-</html>
 
     <section id="schwerpunkte" class="py-24 px-6 max-w-7xl mx-auto">
         <h2 class="text-4xl text-center mb-16 italic">Meine Schwerpunkte</h2>
