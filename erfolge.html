@@ -23,6 +23,7 @@
 
         h1, h2, h3, .serif-font { 
             font-family: 'Playfair Display', serif;
+            overflow-wrap: break-word;
         }
 
         .success-card {
@@ -49,6 +50,7 @@
             display: inline-block;
             transition: 0.3s;
             cursor: pointer;
+            text-align: center;
         }
 
         .footer-link {
@@ -65,47 +67,47 @@
 </head>
 <body>
 
-    <!-- Navigáció -->
-   <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
-    <a href="index.html">
-        <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
-    </a>
+    <!-- Navigáció - Mobilbarát verzió -->
+    <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
+        <a href="index.html">
+            <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
+        </a>
 
-    <!-- Desktop menü -->
-    <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#schwerpunkte">Fokus</a>
-        <a href="index.html#angebote">Angebote</a>
-        <a href="ueber-mich.html">Über mich</a>
-        <a href="erfolge.html">Erfolge</a>
-    </div>
-
-    <div class="flex items-center gap-4">
-        <!-- Kontakt gomb: Csak asztalin látszik -->
-        <a href="index.html#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
-        
-        <!-- Hamburger gomb -->
-        <button id="menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-    </div>
-
-    <!-- Mobil menü -->
-    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b shadow-lg md:hidden">
-        <div class="flex flex-col p-6 space-y-4 font-semibold text-sm uppercase tracking-wider">
-            <a href="index.html#home" class="mobile-link">Home</a>
-            <a href="index.html#schwerpunkte" class="mobile-link">Fokus</a>
-            <a href="index.html#angebote" class="mobile-link">Angebote</a>
-            <a href="ueber-mich.html" class="mobile-link">Über mich</a>
-            <a href="erfolge.html" class="mobile-link">Erfolge</a>
-            <a href="index.html#contact" class="mobile-link btn-primary text-white text-center">Kontakt</a>
+        <!-- Desktop menü (mobilon rejtve) -->
+        <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
+            <a href="index.html#home" class="hover:text-[#8B5E4F] transition-colors">Home</a>
+            <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F] transition-colors">Fokus</a>
+            <a href="index.html#angebote" class="hover:text-[#8B5E4F] transition-colors">Angebote</a>
+            <a href="ueber-mich.html" class="hover:text-[#8B5E4F] transition-colors">Über mich</a>
+            <a href="erfolge.html" class="text-[#8B5E4F]">Erfolge</a>
         </div>
-    </div>
-</nav>
+
+        <div class="flex items-center gap-4">
+            <!-- Kontakt gomb: Mobilon rejtve (hidden), asztali nézetben megjelenik (md:inline-block) -->
+            <a href="index.html#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
+            
+            <!-- Hamburger gomb (csak mobilon látszik) -->
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobil menü lenyíló rész -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b shadow-lg md:hidden">
+            <div class="flex flex-col p-6 space-y-4 font-semibold text-sm uppercase tracking-wider">
+                <a href="index.html#home" class="mobile-link">Home</a>
+                <a href="index.html#schwerpunkte" class="mobile-link">Fokus</a>
+                <a href="index.html#angebote" class="mobile-link">Angebote</a>
+                <a href="ueber-mich.html" class="mobile-link">Über mich</a>
+                <a href="erfolge.html" class="mobile-link text-[#8B5E4F]">Erfolge</a>
+                <a href="index.html#contact" class="mobile-link btn-primary text-white">Kontakt</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Header -->
     <header class="pt-40 pb-16 px-6 bg-[#D1E7DD]/20 text-center">
-        <h1 class="text-5xl md:text-6xl italic mb-6">Erfolgsgeschichten</h1>
+        <h1 class="text-4xl md:text-6xl italic mb-6">Erfolgsgeschichten</h1>
         <p class="max-w-2xl mx-auto text-lg text-gray-600">
             Inspirierende Geschichten von Menschen, die ihre Gesundheit durch die Kraft der vollwertigen pflanzlichen Ernährung zurückgewonnen haben.
         </p>
@@ -146,7 +148,7 @@
                     <h3 class="text-2xl font-bold mb-2">Elisabeth K.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">-13 kg und strahlende Laborwerte</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „Seit ich meine Ernährung mit Miris Hilfe umgestellt habe, hat sich meine Gesundheit grundlegend verändert. Innerhalb weniger Monate habe ich 13 kg verloren, aber der eigentliche Erfolg zeigt sich in meinem neuen Lebensgefühl und den medizinischen Werten. Mein Cholesterinspiegel sank von 8,2 auf 6,9 und auch die Triglyzerid- sowie Entzündungswerte (CRP) liegen nun endlich im Normalbereich. Besonders beeindruckend: Mein TSH-Wert hat sich auf 2,4 stabilisiert, nachdem ich jahrelang wegen einer Überfunktion behandelt wurde. HbA1C 5.6.“
+                        „Seit ich meine Ernährung mit Miris Hilfe umgestellt habe, hat sich meine Gesundheit grundlegend verändert. Innerhalb weniger Monate habe ich 13 kg verloren, aber der eigentliche Erfolg zeigt sich in meinem neuen Lebensgefühl und den medizinischen Werten. Mein Cholesterinspiegel sank von 8,2 auf 6,9 und auch die Triglyzerid- sowie Entzündungwerte (CRP) liegen nun endlich im Normalbereich. Besonders beeindruckend: Mein TSH-Wert hat sich auf 2,4 stabilisiert, nachdem ich jahrelang wegen einer Überfunktion behandelt wurde. HbA1C 5.6.“
                     </p>
                 </div>
             </article>
@@ -202,7 +204,8 @@
             <!-- Julia H. -->
             <article class="success-card lg:col-span-2">
                 <div class="flex flex-col md:flex-row h-full">
-                    <img src="Julia_H.jpg" class="w-full md:w-1/2 h-[400px] object-cover object-center" alt="Julia H.">
+                    <!-- Mobilon object-contain, hogy ne vágja le a széles képet, asztalin object-cover -->
+                    <img src="Julia_H.jpg" class="w-full md:w-1/2 h-[400px] object-contain md:object-cover object-center bg-gray-50" alt="Julia H.">
                     <div class="p-8 flex-grow">
                         <h3 class="text-2xl font-bold mb-2">Julia H.</h3>
                         <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Atopische Dermatitis</p>
@@ -263,44 +266,32 @@
     </div>
 
     <script>
+        // Hamburger menü működtetése
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Cookie banner logika
         const banner = document.getElementById('cookie-banner');
-
-        function hideBanner() {
-            banner.classList.add('hidden');
-        }
-
-        function acceptEssential() {
-            localStorage.setItem('cookieConsent', 'essential');
-            hideBanner();
-        }
-
-        function acceptAll() {
-            localStorage.setItem('cookieConsent', 'all');
-            hideBanner();
-        }
+        function hideBanner() { banner.classList.add('hidden'); }
+        function acceptEssential() { localStorage.setItem('cookieConsent', 'essential'); hideBanner(); }
+        function acceptAll() { localStorage.setItem('cookieConsent', 'all'); hideBanner(); }
 
         window.addEventListener('load', function() {
             if (!localStorage.getItem('cookieConsent')) {
-                setTimeout(() => {
-                    banner.classList.remove('hidden');
-                }, 1000);
+                setTimeout(() => { banner.classList.remove('hidden'); }, 1000);
             }
         });
     </script>
-    <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    });
-</script>
 </body>
 </html>
