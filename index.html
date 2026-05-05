@@ -23,6 +23,8 @@
 
         h1, h2, .serif-font { 
             font-family: 'Playfair Display', serif;
+            /* Biztonsági tördelés nagyon kicsi mobilokra */
+            overflow-wrap: break-word;
         }
 
         .hero-section {
@@ -55,6 +57,7 @@
             font-weight: 600;
             display: inline-block;
             transition: 0.3s;
+            text-align: center;
         }
 
         .price-tag {
@@ -74,12 +77,22 @@
         nav div a { transition: color 0.3s ease; }
         nav div a:hover { color: var(--brand-brown) !important; }
 
+        /* Mobil menü animáció */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
-        <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-12">
+    <!-- Navigáció reszponzív menüvel -->
+    <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
+        <a href="#home">
+            <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
+        </a>
+
+        <!-- Desktop menü (mobilon rejtve) -->
         <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
             <a href="#home">Home</a>
             <a href="#schwerpunkte">Fokus</a>
@@ -87,18 +100,64 @@
             <a href="ueber-mich.html">Über mich</a>
             <a href="erfolge.html">Erfolge</a>
         </div>
-        <a href="#contact" class="btn-primary text-sm py-2 px-6">Kontakt</a>
+
+        <div class="flex items-center gap-4">
+            <a href="#contact" class="hidden sm:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
+            
+            <!-- Hamburger gomb (csak mobilon látszik) -->
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobil menü lenyíló rész -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b shadow-lg md:hidden">
+            <div class="flex flex-col p-6 space-y-4 font-semibold text-sm uppercase tracking-wider">
+                <a href="#home" class="mobile-link">Home</a>
+                <a href="#schwerpunkte" class="mobile-link">Fokus</a>
+                <a href="#angebote" class="mobile-link">Angebote</a>
+                <a href="ueber-mich.html" class="mobile-link">Über mich</a>
+                <a href="erfolge.html" class="mobile-link">Erfolge</a>
+                <a href="#contact" class="mobile-link btn-primary text-white">Kontakt</a>
+            </div>
+        </div>
     </nav>
 
-    <section id="home" class="hero-section pt-20">
+    <!-- Hero Section reszponzív címmel -->
+    <section id="home" class="hero-section pt-32 pb-20 md:pt-20">
         <div class="max-w-7xl mx-auto px-6 w-full">
-            <div class="max-w-2xl bg-white/90 p-12 rounded-[40px] shadow-xl">
-                <h1 class="text-5xl md:text-6xl mb-6 leading-tight text-gray-800">Vegane Ernährungsberatung in Zürich & der Schweiz</h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">Individuelle Beratung für eine gesunde pflanzliche Ernährung – wissenschaftlich fundiert & alltagstauglich</p>
-                <a href="#contact" class="btn-primary">Termin vereinbaren</a>
+            <div class="max-w-2xl bg-white/90 p-8 md:p-12 rounded-[30px] md:rounded-[40px] shadow-xl">
+                <!-- Mobilra optimalizált betűméret (text-3xl) -->
+                <h1 class="text-3xl sm:text-4xl md:text-6xl mb-6 leading-tight text-gray-800">
+                    Vegane Ernährungsberatung in Zürich & der Schweiz
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                    Individuelle Beratung für eine gesunde pflanzliche Ernährung – wissenschaftlich fundiert & alltagstauglich
+                </p>
+                <a href="#contact" class="btn-primary w-full sm:w-auto">Termin vereinbaren</a>
             </div>
         </div>
     </section>
+
+    <script>
+        // Hamburger menü működtetése
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menü bezárása, ha rákattintunk egy linkre
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
 
     <section id="schwerpunkte" class="py-24 px-6 max-w-7xl mx-auto">
         <h2 class="text-4xl text-center mb-16 italic">Meine Schwerpunkte</h2>
