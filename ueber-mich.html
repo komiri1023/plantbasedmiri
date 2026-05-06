@@ -33,23 +33,34 @@
             font-weight: 600;
             display: inline-block;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .content-section {
             background: white;
             border-radius: 40px;
-            padding: 3rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        /* Mobil menü animáció */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+
+        #cookie-banner {
+            box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigáció -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
+    <!-- Navigáció - Egységesített Hamburger menüvel -->
+    <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
         <a href="index.html">
-            <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-12">
+            <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
         </a>
+
+        <!-- Desktop menü -->
         <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
             <a href="index.html#home" class="hover:text-[#8B5E4F] transition-colors">Home</a>
             <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F] transition-colors">Fokus</a>
@@ -57,44 +68,63 @@
             <a href="ueber-mich.html" class="text-[#8B5E4F]">Über mich</a>
             <a href="erfolge.html" class="hover:text-[#8B5E4F] transition-colors">Erfolge</a>
         </div>
-        <!-- MÓDOSÍTÁS: Mobilon rejtve (hidden), asztali nézetben látható (md:inline-block) -->
-        <a href="index.html#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
+
+        <div class="flex items-center gap-4">
+            <a href="index.html#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
+            
+            <!-- Hamburger gomb -->
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobil menü lenyíló -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b shadow-lg md:hidden">
+            <div class="flex flex-col p-6 space-y-4 font-semibold text-sm uppercase tracking-wider">
+                <a href="index.html#home" class="mobile-link">Home</a>
+                <a href="index.html#schwerpunkte" class="mobile-link">Fokus</a>
+                <a href="index.html#angebote" class="mobile-link">Angebote</a>
+                <a href="ueber-mich.html" class="mobile-link text-[#8B5E4F]">Über mich</a>
+                <a href="erfolge.html" class="mobile-link">Erfolge</a>
+                <a href="index.html#contact" class="mobile-link btn-primary text-white">Kontakt</a>
+            </div>
+        </div>
     </nav>
 
-    <main class="pt-32 pb-24 px-6 max-w-6xl mx-auto">
+    <main class="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto">
         
         <!-- Fő rész: Kép és Bevezető -->
-        <div class="flex flex-col md:flex-row gap-16 items-center mb-20">
-            <div class="md:w-1/2">
-                <img src="en.jpg" alt="Mirjana Kovacs" class="rounded-[60px] shadow-2xl w-full h-[600px] object-cover object-top">
+        <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-center mb-20">
+            <div class="w-full md:w-1/2">
+                <img src="en.jpg" alt="Mirjana Kovacs" class="rounded-[40px] md:rounded-[60px] shadow-2xl w-full h-[450px] md:h-[600px] object-cover object-top">
             </div>
-            <div class="md:w-1/2">
-                <h1 class="text-5xl mb-8 italic leading-tight">Die Geschichte hinter Plant-Based Miri</h1>
-                <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h1 class="text-3xl md:text-5xl mb-8 italic leading-tight">Die Geschichte hinter Plant-Based Miri</h1>
+                <div class="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
                     <p class="font-semibold text-gray-800 text-xl italic">„Meine Reise zur pflanzlichen Ernährung begann nicht mit einem Trend, sondern mit einer lebensverändernden Diagnose: Typ-1-Diabetes.“</p>
-                    <p>Die Erfahrung, wie ich durch eine fundierte, pflanzliche Lebensweise meinen eigenen Insulinbedarf drastisch stabilisieren und meine Vitalität zurückgewinnen konnte, prägt heute meine tägliche Arbeit.</p>
+                    <p>Die Erfahrung, wie ich durch eine fundierte, pflanzliche Lebensweise meinen eigenen Insulinbedarf drastisch stabilisieren és meine Vitalität zurückgewinnen konnte, prägt heute meine tägliche Arbeit.</p>
                     <p>Ich biete Ihnen nicht nur Theorie, sondern praxiserprobtes Wissen aus erster Hand.</p>
                 </div>
             </div>
         </div>
 
         <!-- Szakértelem rész -->
-        <div class="content-section mb-16 bg-[#D1E7DD]/20 border-none py-8 px-8">
-            <h2 class="text-3xl mb-6 italic text-center">Wissenschaftliches Fundament & Expertise</h2>
-            <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg space-y-4">
+        <div class="content-section mb-16 bg-[#D1E7DD]/20 py-10 px-6 md:px-12">
+            <h2 class="text-2xl md:text-3xl mb-8 italic text-center">Wissenschaftliches Fundament & Expertise</h2>
+            <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-base md:text-lg space-y-6">
                 <p>Um diese persönliche Erfahrung auf eine wissenschaftliche Basis zu stellen, habe ich mich an der renommierten <strong>eCornell University (T. Colin Campbell Center for Nutrition Studies)</strong> auf pflanzliche Ernährung spezialisiert.</p>
-                <p>In den letzten Jahren durfte ich bereits hunderten von Menschen dabei helfen, ihre Vitalität durch eine Ernährungsumstellung neu zu definieren. Meine Klienten konnten durch meine Begleitung beeindruckende Erfolge erzielen – von der nachhaltigen Gewichtsoptimierung über die Stabilisierung des Blutzuckerspiegels bis hin zur signifikanten Verbesserung ihrer Cholesterin- und Entzündungswerte.</p>
-                <p>Heute begleite ich Menschen in Zürich und der gesamten Schweiz mit einem Ansatz, der wissenschaftlich fundiert, evidenzbasiert und dennoch individuell auf den Alltag zugeschnitten ist.</p>
+                <p>In den letzten Jahren durfte ich bereits hunderten von Menschen dabei helfen, ihre Vitalität durch eine Ernährungsumstellung neu zu definieren.</p>
                 
-                <!-- Certifikát - Nagyobb méret, minimális felső térköz -->
-                <div class="pt-4 text-center">
-                    <img src="Certificate.png" alt="Plant-based Nutrition Certificate" class="h-64 md:h-[450px] w-auto mx-auto opacity-100 shadow-md rounded-lg object-contain">
+                <!-- Certifikát -->
+                <div class="pt-8 text-center">
+                    <img src="Certificate.png" alt="Plant-based Nutrition Certificate" class="max-h-[300px] md:max-h-[450px] w-auto mx-auto shadow-md rounded-lg object-contain">
                 </div>
             </div>
         </div>
+
         <!-- Célcsoport rész -->
         <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
+            <div class="space-y-6 order-2 md:order-1">
                 <h2 class="text-3xl italic">Für wen ich hier bin</h2>
                 <p class="text-gray-600 text-lg">Mein Angebot richtet sich an Menschen, die keine Kompromisse bei ihrer Gesundheit machen wollen:</p>
                 
@@ -105,17 +135,16 @@
                     </li>
                     <li class="flex items-start gap-4">
                         <i class="fa-solid fa-check text-[#8B5E4F] mt-1"></i>
-                        <span><strong>Bewusste Menschen:</strong> Die ihren Stoffwechsel (wie Blutzucker- oder Cholesterinspiegel) präventiv optimieren wollen.</span>
+                        <span><strong>Bewusste Menschen:</strong> Die ihren Stoffwechsel präventiv optimieren wollen.</span>
                     </li>
                     <li class="flex items-start gap-4">
                         <i class="fa-solid fa-check text-[#8B5E4F] mt-1"></i>
                         <span><strong>Einsteiger & Fortgeschrittene:</strong> Die Sicherheit und Struktur in der veganen Welt suchen.</span>
                     </li>
                 </ul>
-                <p class="pt-4 text-gray-600 italic">„Ich kombiniere klinische Evidenz mit alltagstauglichen Lösungen, die Freude am Genuss bereiten.“</p>
             </div>
-            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-50">
-                <h3 class="text-2xl mb-6 serif-font">Bereit für Ihre eigene Reise?</h3>
+            <div class="bg-white p-8 md:p-10 rounded-[40px] shadow-sm border border-gray-50 order-1 md:order-2">
+                <h3 class="text-2xl mb-4 serif-font">Bereit für Ihre eigene Reise?</h3>
                 <p class="text-gray-600 mb-8">Lassen Sie uns gemeinsam schauen, wie wir Ihre Ziele erreichen können.</p>
                 <a href="index.html#contact" class="btn-primary w-full text-center">Jetzt Kontakt aufnehmen</a>
             </div>
@@ -123,7 +152,7 @@
 
         <!-- Vissza gomb -->
         <div class="mt-20 text-center">
-            <a href="index.html" class="text-gray-400 hover:text-[#8B5E4F] transition-colors font-semibold">
+            <a href="index.html" class="text-gray-400 hover:text-[#8B5E4F] transition-colors font-semibold uppercase tracking-widest text-sm">
                 <i class="fa-solid fa-arrow-left mr-2"></i> Zurück zur Startseite
             </a>
         </div>
@@ -133,73 +162,60 @@
     <footer class="bg-white py-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" class="h-10 opacity-50" alt="Logo">
-            
             <div class="flex items-center gap-8">
                 <a href="https://www.instagram.com/plantbasedmiri/" target="_blank" class="text-gray-400 hover:text-[#8B5E4F] text-2xl transition-colors">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <div class="flex gap-12 text-[11px] uppercase tracking-widest font-bold">
-                    <a href="impressum.html" class="footer-link">Impressum</a>
-                    <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+                <div class="flex gap-8 text-[11px] uppercase tracking-widest font-bold">
+                    <a href="impressum.html" class="hover:text-[#8B5E4F]">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-[#8B5E4F]">Datenschutz</a>
                 </div>
             </div>
-            
             <p class="text-[10px] text-gray-300 uppercase tracking-[0.4em]">© 2026 Plantbased Miri</p>
         </div>
     </footer>
 
-<!-- KIBŐVÍTETT COOKIE BANNER -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="text-sm text-gray-600">
-                <h4 class="font-bold text-gray-800 mb-1 text-base">Cookie-Einstellungen</h4>
-                <p>Wir verwenden Cookies, um die grundlegenden Funktionen der Website zu gewährleisten und unseren Datenverkehr zu analysieren. 
-                    <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e] transition-colors">Mehr Informationen finden Sie in unserer Datenschutzerklärung</a>.
-                </p>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-gray-600 text-center md:text-left">
+                <h4 class="font-bold text-gray-800 mb-1">Cookie-Einstellungen</h4>
+                <p>Wir verwenden Cookies für grundlegende Funktionen. <a href="datenschutz.html" class="text-[#8B5E4F] underline">Datenschutzerklärung</a>.</p>
             </div>
-            <div class="flex flex-wrap gap-3">
-                <button onclick="acceptEssential()" class="border border-gray-300 text-gray-600 py-2.5 px-6 rounded-full font-semibold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap">
-                    Nur Essenzielle
-                </button>
-                <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2.5 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap shadow-md">
-                    Alle akzeptieren
-                </button>
+            <div class="flex gap-3">
+                <button onclick="acceptEssential()" class="border border-gray-300 text-gray-600 py-2 px-6 rounded-full font-semibold text-sm hover:bg-gray-50 transition-colors">Nur Essenzielle</button>
+                <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors shadow-md">Alle akzeptieren</button>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    const banner = document.getElementById('cookie-banner');
+    <script>
+        // Hamburger menü kezelése
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    function hideBanner() {
-        banner.classList.add('hidden');
-    }
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-    function acceptEssential() {
-        localStorage.setItem('cookieConsent', 'essential');
-        hideBanner();
-    }
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
-    function acceptAll() {
-        localStorage.setItem('cookieConsent', 'all');
-        hideBanner();
-    }
+        // Cookie kezelés
+        const banner = document.getElementById('cookie-banner');
+        function hideBanner() { banner.classList.add('hidden'); }
+        function acceptEssential() { localStorage.setItem('cookieConsent', 'essential'); hideBanner(); }
+        function acceptAll() { localStorage.setItem('cookieConsent', 'all'); hideBanner(); }
 
-    window.addEventListener('load', function() {
-        if (!localStorage.getItem('cookieConsent')) {
-            setTimeout(() => {
-                banner.classList.remove('hidden');
-            }, 1000);
-        }
-    });
-</script>
-
-<style>
-    #cookie-banner {
-        box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-</style>
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => { banner.classList.remove('hidden'); }, 1000);
+            }
+        });
+    </script>
 </body>
 </html>
