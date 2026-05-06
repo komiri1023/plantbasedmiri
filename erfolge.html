@@ -63,11 +63,19 @@
         #cookie-banner {
             box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
         }
+
+        /* Navigációs linkek hover effektusa */
+        nav div a { transition: color 0.3s ease; }
+        
+        /* Mobil menü animáció finomítás */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigáció - Mobilbarát verzió -->
+    <!-- Navigáció - Reszponzív Hamburger menüvel -->
     <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
         <a href="index.html">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
@@ -75,24 +83,23 @@
 
         <!-- Desktop menü (mobilon rejtve) -->
         <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
-            <a href="index.html#home" class="hover:text-[#8B5E4F] transition-colors">Home</a>
-            <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F] transition-colors">Fokus</a>
-            <a href="index.html#angebote" class="hover:text-[#8B5E4F] transition-colors">Angebote</a>
-            <a href="ueber-mich.html" class="hover:text-[#8B5E4F] transition-colors">Über mich</a>
+            <a href="index.html#home" class="hover:text-[#8B5E4F]">Home</a>
+            <a href="index.html#schwerpunkte" class="hover:text-[#8B5E4F]">Fokus</a>
+            <a href="index.html#angebote" class="hover:text-[#8B5E4F]">Angebote</a>
+            <a href="ueber-mich.html" class="hover:text-[#8B5E4F]">Über mich</a>
             <a href="erfolge.html" class="text-[#8B5E4F]">Erfolge</a>
         </div>
 
         <div class="flex items-center gap-4">
-            <!-- Kontakt gomb: Mobilon rejtve (hidden), asztali nézetben megjelenik (md:inline-block) -->
             <a href="index.html#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-6">Kontakt</a>
             
-            <!-- Hamburger gomb (csak mobilon látszik) -->
+            <!-- Hamburger gomb -->
             <button id="menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- Mobil menü lenyíló rész -->
+        <!-- Mobil menü lenyíló -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b shadow-lg md:hidden">
             <div class="flex flex-col p-6 space-y-4 font-semibold text-sm uppercase tracking-wider">
                 <a href="index.html#home" class="mobile-link">Home</a>
@@ -105,120 +112,108 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="pt-40 pb-16 px-6 bg-[#D1E7DD]/20 text-center">
-        <h1 class="text-4xl md:text-6xl italic mb-6">Erfolgsgeschichten</h1>
-        <p class="max-w-2xl mx-auto text-lg text-gray-600">
+    <!-- Header reszponzív méretezéssel -->
+    <header class="pt-32 md:pt-40 pb-12 md:pb-16 px-6 bg-[#D1E7DD]/20 text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl italic mb-6">Erfolgsgeschichten</h1>
+        <p class="max-w-2xl mx-auto text-base md:text-lg text-gray-600">
             Inspirierende Geschichten von Menschen, die ihre Gesundheit durch die Kraft der vollwertigen pflanzlichen Ernährung zurückgewonnen haben.
         </p>
     </header>
 
     <!-- Sikersztorik Galéria -->
-    <main class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-100">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <main class="py-12 md:py-20 px-6 max-w-7xl mx-auto border-b border-gray-100">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             
             <!-- Marianna M. -->
             <article class="success-card">
-                <img src="Marianna_M.jpg" class="w-full h-[350px] object-cover object-top" alt="Marianna M.">
-                <div class="p-8">
+                <img src="Marianna_M.jpg" class="w-full h-[300px] md:h-[350px] object-cover object-top" alt="Marianna M.">
+                <div class="p-6 md:p-8">
                     <h3 class="text-2xl font-bold mb-2">Marianna M.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Vom Notfall zur neuen Vitalität</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „Ein Blutdruck von 240 und die Einlieferung ins Krankenhaus waren mein Weckruf. Mit Miris Hilfe habe ich innerhalb weniger Monate 20 kg verloren (von 105 kg auf 85 kg). Heute ist mein Blutdruck stabil, meine Blutwerte sind hervorragend und ich strahle wieder vor Energie. Die pflanzliche Ernährung hat mein Leben nachhaltig verändert.“
+                        „Ein Blutdruck von 240 und die Einlieferung ins Krankenhaus waren mein Weckruf. Mit Miris Hilfe habe ich innerhalb weniger Monate 20 kg verloren (von 105 kg auf 85 kg). Heute ist mein Blutdruck stabil, meine Blutwerte sind hervorragend und ich strahle wieder vor Energie.“
                     </p>
                 </div>
             </article>
 
             <!-- Timea H. -->
             <article class="success-card">
-                <img src="Timea H.jpg" class="w-full h-[350px] object-cover object-top" alt="Timea H.">
-                <div class="p-8">
+                <img src="Timea H.jpg" class="w-full h-[300px] md:h-[350px] object-cover object-top" alt="Timea H.">
+                <div class="p-6 md:p-8">
                     <h3 class="text-2xl font-bold mb-2">Timea H.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Insulinresistenz & Abnehmen</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren. Meine Symptome der Insulinresistenz sind komplett verschwunden. Die Kilos purzeln weiterhin, und ich fühle mich heute wie ein völlig neuer Mensch. Danke, Miri!“
+                        „In nur 6 Monaten habe ich durch die Umstellung auf eine vollwertige Pflanzenkost 28 kg verloren. Meine Symptome der Insulinresistenz sind komplett verschwunden. Die Kilos purzeln weiterhin, und ich fühle mich heute wie ein völlig neuer Mensch.“
                     </p>
                 </div>
             </article>
 
             <!-- Elisabeth K. -->
             <article class="success-card">
-                <img src="Elisabeth_K.jpg" class="w-full h-[350px] object-cover object-top" alt="Elisabeth K.">
-                <div class="p-8">
+                <img src="Elisabeth_K.jpg" class="w-full h-[300px] md:h-[350px] object-cover object-top" alt="Elisabeth K.">
+                <div class="p-6 md:p-8">
                     <h3 class="text-2xl font-bold mb-2">Elisabeth K.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">-13 kg und strahlende Laborwerte</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „Seit ich meine Ernährung mit Miris Hilfe umgestellt habe, hat sich meine Gesundheit grundlegend verändert. Innerhalb weniger Monate habe ich 13 kg verloren, aber der eigentliche Erfolg zeigt sich in meinem neuen Lebensgefühl und den medizinischen Werten. Mein Cholesterinspiegel sank von 8,2 auf 6,9 und auch die Triglyzerid- sowie Entzündungwerte (CRP) liegen nun endlich im Normalbereich. Besonders beeindruckend: Mein TSH-Wert hat sich auf 2,4 stabilisiert, nachdem ich jahrelang wegen einer Überfunktion behandelt wurde. HbA1C 5.6.“
+                        „Innerhalb weniger Monate habe ich 13 kg verloren. Mein Cholesterinspiegel sank von 8,2 auf 6,9. Besonders beeindruckend: Mein TSH-Wert hat sich auf 2,4 stabilisiert, nachdem ich jahrelang wegen einer Überfunktion behandelt wurde. HbA1C 5.6.“
                     </p>
                 </div>
             </article>
 
             <!-- Márta F. -->
             <article class="success-card">
-                <img src="Marta_F.jpg" class="w-full h-[350px] object-cover object-top" alt="Márta F.">
-                <div class="p-8">
+                <img src="Marta_F.jpg" class="w-full h-[300px] md:h-[350px] object-cover object-top" alt="Márta F.">
+                <div class="p-6 md:p-8">
                     <h3 class="text-2xl font-bold mb-2">Márta F.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Cholesterin & Schilddrüse</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „Meine Laborergebnisse sprechen für sich: Mein Cholesterinspiegel sank von 6,8 mmol/l auf 4,32 mmol/l. Besonders freue ich mich über meinen TSH-Wert, der sich von 6,2 auf 0,6 verbessert hat. Ich habe 6 kg verloren und fühle mich fantastisch! Vielen herzlichen Dank, Miri!“
+                        „Mein Cholesterinspiegel sank von 6,8 mmol/l auf 4,32 mmol/l. Besonders freue ich mich über meinen TSH-Wert, der sich von 6,2 auf 0,6 verbessert hat. Ich habe 6 kg verloren und fühle mich fantastisch!“
                     </p>
                 </div>
             </article>
 
             <!-- Erika M. -->
             <article class="success-card">
-                <img src="Erika_M.jpg" class="w-full h-[350px] object-cover object-top" alt="Erika M.">
-                <div class="p-8">
+                <img src="Erika_M.jpg" class="w-full h-[300px] md:h-[350px] object-cover object-top" alt="Erika M.">
+                <div class="p-6 md:p-8">
                     <h3 class="text-2xl font-bold mb-2">Erika M.</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Diabetes & Gewichtsverlust</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „Innerhalb von nur zwei Monaten sank mein HbA1c-Wert von 7,7 auf 5,9. Ich konnte meine Medikamente bereits halbieren und habe gleichzeitig 15 kg abgenommen. Diese Ernährung ist für mich einfach lebensverändernd!“
+                        „Innerhalb von nur zwei Monaten sank mein HbA1c-Wert von 7,7 auf 5,9. Ich konnte meine Medikamente bereits halbieren und habe gleichzeitig 15 kg abgenommen. Diese Ernährung ist für mich lebensverändernd!“
                     </p>
                 </div>
             </article>
 
             <!-- Dr. Sipos -->
             <article class="success-card">
-                <img src="Dr._Sipos.png" class="w-full h-[350px] object-cover object-top" alt="Dr. Sipos">
-                <div class="p-8">
+                <img src="Dr._Sipos.png" class="w-full h-[300px] md:h-[350px] object-cover object-top" alt="Dr. Sipos">
+                <div class="p-6 md:p-8">
                     <h3 class="text-2xl font-bold mb-2">Dr. Sipos</h3>
                     <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Typ-2-Diabetes</p>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        „Als Ärztin habe ich lange nur auf Medikamente vertraut. Mein Nüchternzucker lag zwischen 15,5 – 19,4 mmol/l. Mit Miris professioneller Unterstützung halte ich nun die vollwertige pflanzliche Ernährung, und mein Wert liegt konstant unter 5,5 mmol/l. Ich beginne nun sogar, meine Medikamentendosis schrittweise zu reduzieren.“
+                        „Als Ärztin lag mein Nüchternzucker zwischen 15,5 – 19,4 mmol/l. Mit Miris Unterstützung halte ich nun die pflanzliche Ernährung, és mein Wert liegt konstant unter 5,5 mmol/l. Ich reduziere nun schrittweise meine Medikamente.“
                     </p>
                 </div>
             </article>
-
-            <!-- Georg B. -->
-            <article class="success-card">
-                <img src="Georg_B.jpg" class="w-full h-[350px] object-cover object-top" alt="Georg B.">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-2">Georg B.</h3>
-                    <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Cholesterin & LDL-Optimierung</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        „Nur zwei Monate nach meinem letzten Labortest ist mein Gesamtcholesterin von 8 mmol/l auf 4,8 mmol/l gesunken (der Grenzwert liegt bei 5,2 mmol/l). Auch mein LDL-Wert hat sich von 6,3 auf 3,28 fast halbiert. Damit habe ich eines meiner wichtigsten Ziele bereits erreicht. Es sieht ganz so aus, dass die vollwertige pflanzliche Ernährung wirklich funktioniert! :)“
-                    </p>
-                </div>
-            </article>
-
-<!-- Julia H. -->
-<article class="success-card lg:col-span-2">
-    <!-- A flex-col biztosítja, hogy a fotó legyen felül, a szöveg pedig alatta -->
-    <div class="flex flex-col h-full">
-        <!-- h-auto és object-contain: a kép teljes szélességben, vágás nélkül jelenik meg -->
-        <img src="Julia_H.jpg" class="w-full h-auto object-contain" alt="Julia H.">
-        
-        <div class="p-8 flex-grow">
-            <h3 class="text-2xl font-bold mb-2">Julia H.</h3>
-            <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Atopische Dermatitis</p>
-            <p class="text-gray-600 text-sm leading-relaxed">
-                „Nach Jahren mit atopischer Dermatitis und erfolglosen Steroid-Behandlungen hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen und Pigmentflecken in meinem Gesicht sind fast vollständig verschwunden. Ich bin unendlich dankbar, dass meine Haut heute wieder gesund aussieht.“
-            </p>
         </div>
-    </div>
-</article>
 
-        <div class="mt-20 text-center">
+        <!-- Julia H. (Kiemelt kártya) -->
+        <div class="mt-10">
+            <article class="success-card lg:max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row">
+                    <img src="Julia_H.jpg" class="w-full md:w-1/2 h-auto object-contain" alt="Julia H.">
+                    <div class="p-6 md:p-10 flex-grow">
+                        <h3 class="text-2xl font-bold mb-2">Julia H.</h3>
+                        <p class="text-[#8B5E4F] text-sm font-bold uppercase mb-4 tracking-wider">Atopische Dermatitis</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            „Nach Jahren mit atopischer Dermatitis hat die Ernährungsumstellung ein Wunder bewirkt. Die Entzündungen und Pigmentflecken in meinem Gesicht sind fast vollständig verschwunden. Ich bin unendlich dankbar, dass meine Haut heute wieder gesund aussieht.“
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="mt-16 text-center">
             <a href="index.html" class="text-gray-400 hover:text-[#8B5E4F] text-sm uppercase tracking-widest font-bold transition-colors">
                 <i class="fa-solid fa-arrow-left mr-2"></i> Zurück zur Startseite
             </a>
@@ -229,45 +224,35 @@
     <footer class="bg-white py-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" class="h-10 opacity-50" alt="Logo">
-            
             <div class="flex items-center gap-8">
-                <a href="https://www.instagram.com/plantbasedmiri/" target="_blank" class="text-gray-400 hover:text-[#8B5E4F] text-2xl transition-colors">
+                <a href="https://www.instagram.com/plantbasedmiri/" target="_blank" class="text-gray-400 hover:text-[#8B5E4F] text-2xl">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <div class="flex gap-12 text-[11px] uppercase tracking-widest font-bold">
+                <div class="flex gap-6 md:gap-12 text-[11px] uppercase tracking-widest font-bold">
                     <a href="impressum.html" class="footer-link">Impressum</a>
                     <a href="datenschutz.html" class="footer-link">Datenschutz</a>
                 </div>
             </div>
-            
             <p class="text-[10px] text-gray-300 uppercase tracking-[0.4em]">© 2026 Plantbased Miri</p>
         </div>
     </footer>
 
     <!-- COOKIE BANNER -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 shadow-2xl hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-sm text-gray-600">
-                    <h4 class="font-bold text-gray-800 mb-1 text-base">Cookie-Einstellungen</h4>
-                    <p>Wir verwenden Cookies, um die grundlegenden Funktionen der Website zu gewährleisten und unseren Datenverkehr zu analysieren. 
-                        <a href="datenschutz.html" class="text-[#8B5E4F] underline hover:text-[#724a3e] transition-colors">Mehr Informationen finden Sie in unserer Datenschutzerklärung</a>.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-3">
-                    <button onclick="acceptEssential()" class="border border-gray-300 text-gray-600 py-2.5 px-6 rounded-full font-semibold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap">
-                        Nur Essenzielle
-                    </button>
-                    <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2.5 px-8 rounded-full font-semibold text-sm hover:bg-[#724a3e] transition-colors whitespace-nowrap shadow-md">
-                        Alle akzeptieren
-                    </button>
-                </div>
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md z-[200] border-t border-gray-100 p-6 hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-gray-600 text-center md:text-left">
+                <h4 class="font-bold text-gray-800 mb-1">Cookie-Einstellungen</h4>
+                <p>Wir verwenden Cookies für grundlegende Funktionen. <a href="datenschutz.html" class="text-[#8B5E4F] underline">Details</a>.</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="acceptEssential()" class="border border-gray-300 text-gray-600 py-2 px-4 rounded-full text-xs font-bold uppercase">Nöthig</button>
+                <button onclick="acceptAll()" class="bg-[#8B5E4F] text-white py-2 px-6 rounded-full text-xs font-bold uppercase">Alle OK</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Hamburger menü működtetése
+        // Hamburger menü
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -282,7 +267,7 @@
             });
         });
 
-        // Cookie banner logika
+        // Cookie banner
         const banner = document.getElementById('cookie-banner');
         function hideBanner() { banner.classList.add('hidden'); }
         function acceptEssential() { localStorage.setItem('cookieConsent', 'essential'); hideBanner(); }
