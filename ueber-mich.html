@@ -42,9 +42,15 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
-        /* Mobil menü animáció */
+        /* Mobil menü animáció és stílus */
         #mobile-menu {
             transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.active {
+            max-height: 500px; /* Elég nagy érték a tartalomnak */
         }
 
         #cookie-banner {
@@ -54,7 +60,7 @@
 </head>
 <body>
 
-    <!-- Navigáció - Egységesített Hamburger menüvel -->
+    <!-- Navigáció -->
     <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
         <a href="index.html">
             <img src="3394_PlantbasedMiri_logo_VC_GR.png" alt="Logo" class="h-10 md:h-12">
@@ -86,7 +92,7 @@
                 <a href="index.html#angebote" class="mobile-link">Angebote</a>
                 <a href="ueber-mich.html" class="mobile-link text-[#8B5E4F]">Über mich</a>
                 <a href="erfolge.html" class="mobile-link">Erfolge</a>
-                <a href="index.html#contact" class="mobile-link btn-primary text-white">Kontakt</a>
+                <a href="index.html#contact" class="mobile-link btn-primary text-white text-center">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -197,11 +203,14 @@
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('active');
         });
 
+        // Menü bezárása, ha rákattintunk egy linkre
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('active');
             });
         });
 
